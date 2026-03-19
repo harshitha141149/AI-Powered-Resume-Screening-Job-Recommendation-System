@@ -1,0 +1,41 @@
+import pandas as pd
+import random
+
+skills_list = [
+    "Python", "Machine Learning", "Deep Learning", "Java",
+    "SQL", "HTML", "CSS", "JavaScript", "React",
+    "Data Analysis", "NLP", "TensorFlow", "AWS", "Azure"
+]
+
+job_titles = [
+    "Data Scientist", "Software Engineer", "ML Engineer",
+    "AI Engineer", "Web Developer", "Backend Developer"
+]
+
+companies = [
+    "Google", "Amazon", "Microsoft", "Infosys",
+    "TCS", "Wipro", "Accenture", "IBM"
+]
+
+locations = [
+    "Bangalore", "Hyderabad", "Chennai",
+    "Pune", "Delhi", "Mumbai"
+]
+
+data = []
+
+for i in range(1500):
+    record = {
+        "Resume_ID": i + 1,
+        "Skills": ", ".join(random.sample(skills_list, 5)),
+        "Experience_Years": random.randint(0, 8),
+        "Job_Title": random.choice(job_titles),
+        "Company": random.choice(companies),
+        "Location": random.choice(locations)
+    }
+    data.append(record)
+
+df = pd.DataFrame(data)
+df.to_csv("resume_job_dataset_1500.csv", index=False)
+
+df.head()
