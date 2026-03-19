@@ -1,0 +1,13 @@
+mapping = []
+
+for i in range(1000):
+    mapping.append({
+        "Skill": random.choice(skills_list),
+        "Mapped_Job": random.choice(job_titles),
+        "Demand_Score": random.randint(50, 100)
+    })
+
+skill_df = pd.DataFrame(mapping)
+skill_df.to_csv("skill_job_mapping_1000.csv", index=False)
+
+skill_df.head()
