@@ -1,0 +1,16 @@
+profiles = []
+
+for i in range(1000):
+    profiles.append({
+        "Candidate_ID": i + 1,
+        "Target_Role": random.choice(job_titles),
+        "Summary": "Motivated professional with strong technical skills",
+        "Skills": ", ".join(random.sample(skills_list, 6)),
+        "Projects": "Built ML and web-based applications",
+        "Experience_Years": random.randint(0, 7)
+    })
+
+resume_ai_df = pd.DataFrame(profiles)
+resume_ai_df.to_csv("ai_resume_dataset_1000.csv", index=False)
+
+resume_ai_df.head()
