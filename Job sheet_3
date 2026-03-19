@@ -1,0 +1,16 @@
+data = []
+
+for i in range(1200):
+    data.append({
+        "Job_ID": i + 1,
+        "Company": random.choice(companies),
+        "Job_Title": random.choice(job_titles),
+        "Required_Skills": ", ".join(random.sample(skills_list, 4)),
+        "Experience_Level": random.choice(["Entry", "Mid", "Senior"]),
+        "Location": random.choice(locations)
+    })
+
+company_df = pd.DataFrame(data)
+company_df.to_csv("company_jobs_1200.csv", index=False)
+
+company_df.head()
