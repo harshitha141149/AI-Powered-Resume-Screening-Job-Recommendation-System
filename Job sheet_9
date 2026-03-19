@@ -1,0 +1,16 @@
+companies = ["Google", "Amazon", "Microsoft", "Infosys", "TCS"]
+
+data = []
+
+for i in range(1800):
+    data.append({
+        "Company": random.choice(companies),
+        "Job_Title": random.choice(categories),
+        "Year": random.randint(2018, 2024),
+        "Hires_Count": random.randint(5, 200)
+    })
+
+df = pd.DataFrame(data)
+df.to_csv("company_hiring_history_1800.csv", index=False)
+
+df.head()
