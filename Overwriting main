@@ -1,0 +1,19 @@
+%%writefile main.py
+from resume_parser import extract_text_from_resume
+from recommender import recommend_jobs
+
+print("===== AI Resume Screening System =====")
+
+resume_path = input("Enter resume PDF file path: ")
+
+resume_text = extract_text_from_resume(resume_path)
+
+print("\nResume successfully analyzed!\n")
+
+recommended_jobs = recommend_jobs(resume_text)
+
+print("Top Job Recommendations:\n")
+for index, row in recommended_jobs.iterrows():
+    print(f"Job Role: {row['Job_Title']}")
+    print(f"Match Score: {round(row['Score']*100, 2)}%")
+    print("-" * 30)
