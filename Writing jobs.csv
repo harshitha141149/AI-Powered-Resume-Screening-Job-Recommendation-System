@@ -1,0 +1,7 @@
+%%writefile jobs.csv
+Job_Title,Job_Description
+Data Scientist,Python Machine Learning Statistics Data Analysis Pandas Numpy
+Software Engineer,Java Python OOPS Data Structures Algorithms
+Web Developer,HTML CSS JavaScript React Frontend Backend
+AI Engineer,Deep Learning Neural Networks Python AI ML
+ML Engineer,Machine Learning Python Data Modeling Scikit Learn
