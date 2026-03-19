@@ -1,0 +1,2 @@
+from google.colab import sheets
+sheet = sheets.InteractiveSheet(df=df)
